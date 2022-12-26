@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { environment } from './enviroment';
 import { RestaurantSchema } from './restaurant/data/dto/restaurant.schema.dto';
 import { OrderModule } from './order/order.module';
+import { ProducerModule } from 'sqs/producer/producer.module';
+import { ConsumerModule } from 'sqs/consumer/consumer.module';
 
 
 @Module({
@@ -25,7 +27,9 @@ import { OrderModule } from './order/order.module';
       }),
     }),
     RestaurantModule,
-    OrderModule
+    OrderModule,
+    ProducerModule,
+    ConsumerModule
   ],
   controllers: [],
   providers: [],
