@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ProducerModule } from 'sqs/producer/producer.module';
+import { ProducerModule } from './../../sqs/producer/producer.module';
 import { OrderController } from './order.controller';
 
 @Module({

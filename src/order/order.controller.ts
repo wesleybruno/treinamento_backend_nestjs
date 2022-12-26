@@ -1,5 +1,5 @@
 import { Controller, Post, Body } from '@nestjs/common';
-import { MessageProducer } from 'sqs/producer/producer.service';
+import { MessageProducer } from './../../sqs/producer/producer.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 
 @Controller('order')

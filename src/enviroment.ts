@@ -10,12 +10,16 @@ export interface IEnvironment {
   logging: boolean;
 }
 
-export const environment: IEnvironment = {
-    production: false,
-    dbHost: 'localhost',
-    dbPort: 5432,
-    dbName: 'db',
-    dbUsername: 'admin',
-    dbPassword: '123456',
-    logging: true,
-  };
+export var environment: IEnvironment = {
+  production: false,
+  dbHost: process.env.POSTGRES_HOST,
+  dbPort: parseInt(process.env.POSTGRES_PORT),
+  dbName: process.env.POSTGRES_DB,
+  dbUsername: process.env.POSTGRES_USER,
+  dbPassword: process.env.POSTGRES_PASSWORD,
+  logging: true,
+};
+
+export function updateEnv(newEnviroment: IEnvironment) {
+  environment = newEnviroment;
+};

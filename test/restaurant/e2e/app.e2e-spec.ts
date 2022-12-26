@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../../../src/app.module';
 import { PostgreSqlContainer } from 'testcontainers';
-import { environment } from '../../../src/enviroment';
+import { updateEnv } from '../../../src/enviroment';
 
 
 describe('Restaurant (e2e)', () => {
@@ -18,8 +18,15 @@ describe('Restaurant (e2e)', () => {
       .withPassword('123456')
       .start();
 
-    environment.dbPort = pg.getMappedPort(5432);
-    environment.logging = false;
+    updateEnv({
+      production: false,
+      dbHost: 'localhost',
+      dbPort: pg.getMappedPort(5432),
+      dbName: 'db',
+      dbUsername: 'admin',
+      dbPassword: '123456',
+      logging: false
+    });
 
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
