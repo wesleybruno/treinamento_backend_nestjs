@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+
+  db:
+    container_name: postgres_container
+    image: postgres:14.1-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  
+      POSTGRES_DB: ${POSTGRES_DB} 
+      PGDATA: /tmp
+    volumes:
+       - ./docker/postgres:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    networks: 
+      - postgres
+    restart: unless-stopped 
+
+  localstack:
+    container_name: "localstack"
+    image: localstack/localstack:0.14.4
+    network_mode: bridge
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+      - "9090:8080"
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=us-east-1
+      - DEBUG=1
+    volumes:
+      - "./docker/localstack/localstack:/tmp/localstack"
+      - "./docker/localstack/mercanis:/tmp/mercanis-localstack"
+      - "./docker/localstack/docker:/var/run/docker.sock"
+
+networks:
+  postgres:
+    driver: bridge
