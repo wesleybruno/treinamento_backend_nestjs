@@ -4,8 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { environment } from './enviroment';
 import { RestaurantSchema } from './restaurant/data/dto/restaurant.schema.dto';
-import { ProducerModule } from './sns/producer/producer.module';
-import { ConsumerModule } from './sns/consumer/consumer.module';
 
 
 @Module({
@@ -25,9 +23,7 @@ import { ConsumerModule } from './sns/consumer/consumer.module';
         synchronize: true,
       }),
     }),
-    RestaurantModule,
-    ProducerModule,
-    ConsumerModule,
+    RestaurantModule
   ],
   controllers: [],
   providers: [],
