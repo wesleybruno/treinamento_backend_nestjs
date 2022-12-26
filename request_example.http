@@ -31,3 +31,8 @@ Content-Type: application/json
 POST http://localhost:3000/order
 Content-Type: application/json
 
+{
+    "restaurantId": "1234",
+    "description": "description"
+}
+

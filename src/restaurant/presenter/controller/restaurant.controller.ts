@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Body, NotFoundException, HttpStatus, Param, Delete } from '@nestjs/common';
 import { GetAllRestaurantsUsecase } from './../../domain/usecase/get-all-restaurant.usecase';
 import { CreateRestaurantDto } from '../dto/create-restaurant.dto';
-import { UpdateRestaurantDto } from '../dto/update-restaurant.dto';
 import { GetRestaurantDetailUsecase } from './../../domain/usecase/get-restaurant-detail.usecase';
 import { CreateRestaurantUsecase, CreateRestaurantUsecaseParams } from './../../domain/usecase/create-restaurant.usecase';
 import { DeleteRestaurantUsecase } from './../../domain/usecase/delete-restaurant.usecase';
