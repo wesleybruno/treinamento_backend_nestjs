@@ -1,7 +1,5 @@
-import { Injectable } from '@nestjs/common';
 import { SqsService } from '@ssut/nestjs-sqs';
 
-@Injectable()
 export class MessageProducer {
     constructor(private readonly sqsService: SqsService) { }
     async sendMessage(body: any) {

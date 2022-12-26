@@ -23,6 +23,12 @@ AWS.config.update({
         }),
     ],
     controllers: [],
-    providers: [MessageHandler],
+    providers: [
+        {
+            provide: MessageHandler,
+            useFactory: () => new MessageHandler(),
+            inject: [],
+        },
+    ],
 })
 export class ConsumerModule { }

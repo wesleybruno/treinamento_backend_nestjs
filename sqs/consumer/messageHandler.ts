@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { SqsMessageHandler, SqsConsumerEventHandler } from '@ssut/nestjs-sqs';
 import * as AWS from 'aws-sdk';
 
-@Injectable()
+
 export class MessageHandler {
     constructor() { }
     @SqsMessageHandler('NEW_ORDER', false)

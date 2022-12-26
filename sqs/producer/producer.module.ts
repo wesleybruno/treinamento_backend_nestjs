@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { SqsModule } from '@ssut/nestjs-sqs';
 import { MessageProducer } from './producer.service';
+import { SqsService } from '@ssut/nestjs-sqs';
+
 import * as AWS from 'aws-sdk';
 
 AWS.config.update({
@@ -8,7 +10,6 @@ AWS.config.update({
     accessKeyId: 'ACCESS_KEY_ID',//config.ACCESS_KEY_ID,
     secretAccessKey: 'ACCESS_SECRET', //config.SECRET_ACCESS_KEY,
 });
-
 
 @Module({
     imports: [
@@ -24,7 +25,13 @@ AWS.config.update({
         }),
     ],
     controllers: [],
-    providers: [MessageProducer],
+    providers: [
+        {
+            provide: MessageProducer,
+            useFactory: (sqsService: SqsService) => new MessageProducer(sqsService),
+            inject: [SqsService],
+        },
+    ],
     exports: [MessageProducer]
 })
 export class ProducerModule { }
