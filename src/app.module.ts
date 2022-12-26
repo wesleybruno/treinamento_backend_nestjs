@@ -3,6 +3,7 @@ import { RestaurantModule } from './restaurant/restaurant.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { environment } from './enviroment';
+import { RestaurantSchema } from './restaurant/data/dto/restaurant.schema.dto';
 
 
 @Module({
@@ -17,7 +18,7 @@ import { environment } from './enviroment';
         password: environment.dbPassword,
         database: environment.dbName,
         logging: environment.logging,
-        entities: [],
+        entities: [RestaurantSchema],
         autoLoadModels: true,
         synchronize: true,
       }),

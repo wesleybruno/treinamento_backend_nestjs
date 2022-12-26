@@ -1,3 +1,26 @@
 ###
 GET http://localhost:3000/restaurant/
 Content-Type: application/json
+
+###
+GET http://localhost:3000/restaurant/1234
+Content-Type: application/json
+
+
+###
+DELETE  http://localhost:3000/restaurant/1234
+Content-Type: application/json
+
+###
+POST http://localhost:3000/restaurant
+Content-Type: application/json
+
+{
+    "id": "1234",
+    "description": "description",
+    "address": {
+        "description": "description",
+        "number": "number"
+    }
+   
+}

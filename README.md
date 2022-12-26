@@ -1,5 +1,11 @@
 ## Treinamento NestJS
 
+ ```
+ * NestJs
+ * TypeOrm - postgres
+ * TestContainer
+```
+
 ## Requirements
  ```
  * docker

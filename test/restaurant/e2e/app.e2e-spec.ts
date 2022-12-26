@@ -36,7 +36,6 @@ describe('Restaurant (e2e)', () => {
   it('/restaurant (GET)', () => {
     return request(app.getHttpServer())
       .get('/restaurant')
-      .expect(200)
-      .expect('This action returns all restaurant');
+      .expect(200);
   });
 });
