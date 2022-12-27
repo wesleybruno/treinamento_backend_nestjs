@@ -50,6 +50,9 @@ import { RestaurantController } from './presenter/controller/restaurant.controll
       },
       inject: [RestaurantRepositoryImpl]
     }
+  ],
+  exports: [
+    GetRestaurantDetailUsecase
   ]
 })
 export class RestaurantModule {}

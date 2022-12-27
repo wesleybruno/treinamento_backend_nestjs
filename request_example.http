@@ -7,22 +7,22 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/restaurant/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE0Mjg5MCwiZXhwIjoxNjcyMTQ0MDkwfQ.K7LocuPZAHFV9ckU3e-1znlvjEvMhIp7D3W2nUTaOoc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE3MjM3MCwiZXhwIjoxNjcyMTkzOTcwfQ.oOP-4_zqu3gxx6YtuINA7ExgBBqgCjkAKh70pDSg4qM
 
 ###
 GET http://localhost:3000/restaurant/1234
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE0Mjg5MCwiZXhwIjoxNjcyMTQ0MDkwfQ.K7LocuPZAHFV9ckU3e-1znlvjEvMhIp7D3W2nUTaOoc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE3MjM3MCwiZXhwIjoxNjcyMTkzOTcwfQ.oOP-4_zqu3gxx6YtuINA7ExgBBqgCjkAKh70pDSg4qM
 
 ###
 DELETE  http://localhost:3000/restaurant/1234
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE0Mjg5MCwiZXhwIjoxNjcyMTQ0MDkwfQ.K7LocuPZAHFV9ckU3e-1znlvjEvMhIp7D3W2nUTaOoc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE3MjM3MCwiZXhwIjoxNjcyMTkzOTcwfQ.oOP-4_zqu3gxx6YtuINA7ExgBBqgCjkAKh70pDSg4qM
 
 ###
 POST http://localhost:3000/restaurant
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE0Mjg5MCwiZXhwIjoxNjcyMTQ0MDkwfQ.K7LocuPZAHFV9ckU3e-1znlvjEvMhIp7D3W2nUTaOoc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE3MjM3MCwiZXhwIjoxNjcyMTkzOTcwfQ.oOP-4_zqu3gxx6YtuINA7ExgBBqgCjkAKh70pDSg4qM
 
 {
     "id": "1234",
@@ -35,11 +35,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impva
 }
 
 
-
 ###
 POST http://localhost:3000/order
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE1MDMxOCwiZXhwIjoxNjcyMTcxOTE4fQ.Jsk9_oHOC5h8y_xSMtgR5eU_MHQw2Sl_ONUVdhgGmME
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjE3MjM3MCwiZXhwIjoxNjcyMTkzOTcwfQ.oOP-4_zqu3gxx6YtuINA7ExgBBqgCjkAKh70pDSg4qM
 
 {
     "restaurantId": "1234",

@@ -8,6 +8,7 @@ import { OrderModule } from './order/order.module';
 import { ProducerModule } from './../sqs/producer/producer.module';
 import { ConsumerModule } from './../sqs/consumer/consumer.module';
 import { AuthModule } from './auth/auth.module';
+import { OrderSchema } from './order/data/dto/order.schema.dto';
 
 const defaultModules = [
   ConfigModule.forRoot(),
@@ -20,7 +21,7 @@ const defaultModules = [
       password: environment.dbPassword,
       database: environment.dbName,
       logging: environment.logging,
-      entities: [RestaurantSchema],
+      entities: [RestaurantSchema, OrderSchema],
       autoLoadModels: true,
       synchronize: true,
     }),
