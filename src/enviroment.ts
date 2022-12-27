@@ -8,6 +8,7 @@ export interface IEnvironment {
   dbUsername: string;
   dbPassword: string;
   logging: boolean;
+  authSecret: string;
 }
 
 export var environment: IEnvironment = {
@@ -17,6 +18,7 @@ export var environment: IEnvironment = {
   dbName: process.env.POSTGRES_DB,
   dbUsername: process.env.POSTGRES_USER,
   dbPassword: process.env.POSTGRES_PASSWORD,
+  authSecret: process.env.AUTH_SECRET_KEY,
   logging: true,
 };
 
