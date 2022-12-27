@@ -13,6 +13,7 @@ async function bootstrap() {
     dbUsername: process.env.POSTGRES_USER,
     dbPassword: process.env.POSTGRES_PASSWORD,
     logging: true,
+    authSecret: process.env.AUTH_SECRET_KEY,
   });
 
   const app = await NestFactory.create(AppModule);

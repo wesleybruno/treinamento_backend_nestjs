@@ -25,7 +25,8 @@ describe('Restaurant (e2e)', () => {
       dbName: 'db',
       dbUsername: 'admin',
       dbPassword: '123456',
-      logging: false
+      logging: false,
+      authSecret: 'secret',
     });
 
     const moduleFixture: TestingModule = await Test.createTestingModule({
