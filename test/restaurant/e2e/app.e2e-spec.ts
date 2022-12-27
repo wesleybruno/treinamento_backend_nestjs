@@ -4,8 +4,9 @@ import * as request from 'supertest';
 import { AppModule } from '../../../src/app.module';
 import { PostgreSqlContainer } from 'testcontainers';
 import { updateEnv } from '../../../src/enviroment';
+import { env } from 'process';
 
-
+env.RUNNING_TESTS = '1';
 describe('Restaurant (e2e)', () => {
   let app: INestApplication;
   jest.setTimeout(30000);
@@ -20,6 +21,7 @@ describe('Restaurant (e2e)', () => {
 
     updateEnv({
       production: false,
+      runningTest: true,
       dbHost: 'localhost',
       dbPort: pg.getMappedPort(5432),
       dbName: 'db',

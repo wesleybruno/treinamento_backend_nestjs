@@ -9,30 +9,43 @@ import { ProducerModule } from './../sqs/producer/producer.module';
 import { ConsumerModule } from './../sqs/consumer/consumer.module';
 import { AuthModule } from './auth/auth.module';
 
+const defaultModules = [
+  ConfigModule.forRoot(),
+  TypeOrmModule.forRootAsync({
+    useFactory: () => ({
+      type: 'postgres',
+      host: environment.dbHost,
+      port: environment.dbPort,
+      username: environment.dbUsername,
+      password: environment.dbPassword,
+      database: environment.dbName,
+      logging: environment.logging,
+      entities: [RestaurantSchema],
+      autoLoadModels: true,
+      synchronize: true,
+    }),
+  }),
+  RestaurantModule,
+  AuthModule
+];
+
+const prodModules = [
+  OrderModule,
+  ProducerModule,
+  ConsumerModule,
+]
+
+const testModules = []
+
+function mountImport() {
+  if (environment.runningTest)
+    return defaultModules.concat(testModules);
+
+  else return defaultModules.concat(prodModules);
+}
 
 @Module({
-  imports: [
-    ConfigModule.forRoot(),
-    TypeOrmModule.forRootAsync({
-      useFactory: () => ({
-        type: 'postgres',
-        host: environment.dbHost,
-        port: environment.dbPort,
-        username: environment.dbUsername,
-        password: environment.dbPassword,
-        database: environment.dbName,
-        logging: environment.logging,
-        entities: [RestaurantSchema],
-        autoLoadModels: true,
-        synchronize: true,
-      }),
-    }),
-    RestaurantModule,
-    OrderModule,
-    ProducerModule,
-    ConsumerModule,
-    AuthModule
-  ],
+  imports: mountImport(),
   controllers: [],
   providers: [],
 })

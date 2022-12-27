@@ -1,7 +1,7 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
-import { updateEnv } from './enviroment';
+import { environment, updateAwsEnv, updateEnv } from './enviroment';
 import { JwtAuthGuard } from './auth/auth.controller';
 import * as AWS from 'aws-sdk';
 
@@ -13,15 +13,24 @@ async function bootstrap() {
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   });
 
+  updateAwsEnv({
+    region: process.env.AWS_DEFAULT_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretKeyId: process.env.AWS_SECRET_ACCESS_KEY,
+    queueName: process.env.AWS_SQS_ORDER_QUEUE,
+    hostQueueName: process.env.AWS_HOST_QUEUE,
+  })
+
   updateEnv({
-    production: false,
+    production: environment.production,
     dbHost: process.env.POSTGRES_HOST,
     dbPort: parseInt(process.env.POSTGRES_PORT),
     dbName: process.env.POSTGRES_DB,
     dbUsername: process.env.POSTGRES_USER,
     dbPassword: process.env.POSTGRES_PASSWORD,
-    logging: true,
+    logging: environment.logging,
     authSecret: process.env.AUTH_SECRET_KEY,
+    runningTest: process.env.RUNNING_TESTS == '1',
   });
 
   const app = await NestFactory.create(AppModule);

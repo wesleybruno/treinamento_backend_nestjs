@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { SqsModule } from '@ssut/nestjs-sqs';
+import { aws_environment } from './../../src/enviroment';
 import { MessageHandler } from './messageHandler';
 
 @Module({
@@ -7,9 +8,9 @@ import { MessageHandler } from './messageHandler';
         SqsModule.register({
             consumers: [
                 {
-                    name: process.env.AWS_SQS_ORDER_QUEUE,
-                    queueUrl: process.env.AWS_HOST_QUEUE,
-                    region: process.env.AWS_DEFAULT_REGION,
+                    name: aws_environment.queueName,
+                    queueUrl: aws_environment.hostQueueName,
+                    region: aws_environment.region,
                 },
             ],
             producers: [],
