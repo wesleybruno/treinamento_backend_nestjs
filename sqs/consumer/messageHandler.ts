@@ -5,12 +5,12 @@ import * as AWS from 'aws-sdk';
 
 export class MessageHandler {
     constructor() { }
-    @SqsMessageHandler('NEW_ORDER', false)
+    @SqsMessageHandler(process.env.AWS_SQS_ORDER_QUEUE, false)
     async handleMessage(message: AWS.SQS.Message) {
         console.log(message);
     }
 
-    @SqsConsumerEventHandler('NEW_ORDER', 'processing_error')
+    @SqsConsumerEventHandler(process.env.AWS_SQS_ORDER_QUEUE, 'processing_error')
     public onProcessingError(error: Error, message: AWS.SQS.Message) {
         console.log(error);
     }

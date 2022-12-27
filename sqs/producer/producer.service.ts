@@ -7,7 +7,7 @@ export class MessageProducer {
         const message: any = JSON.stringify({ body });
 
         try {
-            await this.sqsService.send('NEW_ORDER', {
+            await this.sqsService.send(process.env.AWS_SQS_ORDER_QUEUE, {
                 id: '123',
                 body: message,
             });

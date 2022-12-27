@@ -1,11 +1,18 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
-import { environment, updateEnv } from './enviroment';
+import { updateEnv } from './enviroment';
 import { JwtAuthGuard } from './auth/auth.controller';
+import * as AWS from 'aws-sdk';
 
 async function bootstrap() {
- 
+
+  AWS.config.update({
+    region: process.env.AWS_DEFAULT_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  });
+
   updateEnv({
     production: false,
     dbHost: process.env.POSTGRES_HOST,
