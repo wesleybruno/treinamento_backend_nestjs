@@ -7,6 +7,7 @@ import { RestaurantSchema } from './restaurant/data/dto/restaurant.schema.dto';
 import { OrderModule } from './order/order.module';
 import { ProducerModule } from './../sqs/producer/producer.module';
 import { ConsumerModule } from './../sqs/consumer/consumer.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -29,7 +30,8 @@ import { ConsumerModule } from './../sqs/consumer/consumer.module';
     RestaurantModule,
     OrderModule,
     ProducerModule,
-    ConsumerModule
+    ConsumerModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
