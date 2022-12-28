@@ -10,6 +10,9 @@ export const OrderSchema = new EntitySchema<OrderEntity>({
             type: "int",
             generated: "increment",
         },
+        restaurantId: {
+            type: "int",
+        },
         enternalId: {
             type: String,
             length: 64,

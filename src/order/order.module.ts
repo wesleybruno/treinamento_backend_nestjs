@@ -8,6 +8,7 @@ import { OrderEntity } from './domain/entities/order.entity';
 import { OrderRepository } from './domain/repository/order.repository';
 import { CreateOrderUsecase } from './domain/usecase/create-order.usecase';
 import { OrderController } from './presenter/controller/order.controller';
+import { GetOrdersByRestaurantUsecase } from './domain/usecase/get-order-by-restaurant.usecase';
 
 @Module({
   controllers: [OrderController],
@@ -25,6 +26,13 @@ import { OrderController } from './presenter/controller/order.controller';
       provide: CreateOrderUsecase,
       useFactory(repository: OrderRepository) {
         return new CreateOrderUsecase(repository)
+      },
+      inject: [OrderRepositoryImpl]
+    },
+    {
+      provide: GetOrdersByRestaurantUsecase,
+      useFactory(repository: OrderRepository) {
+        return new GetOrdersByRestaurantUsecase(repository)
       },
       inject: [OrderRepositoryImpl]
     },
