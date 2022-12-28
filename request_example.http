@@ -7,22 +7,22 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/restaurant/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMjU5MCwiZXhwIjoxNjcyMjU0MTkwfQ.r90C-ZVDaK_HiNZZNlPTBD9FTcmdZ0Ki3m0lTjtDss4
+Authorization: Braia aewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
 
 ###
-GET http://localhost:3000/restaurant/6
+GET http://localhost:3000/restaurant/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMjU5MCwiZXhwIjoxNjcyMjU0MTkwfQ.r90C-ZVDaK_HiNZZNlPTBD9FTcmdZ0Ki3m0lTjtDss4
+Authorization: Braia ewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
 
 ###
 DELETE  http://localhost:3000/restaurant/5
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMjU5MCwiZXhwIjoxNjcyMjU0MTkwfQ.r90C-ZVDaK_HiNZZNlPTBD9FTcmdZ0Ki3m0lTjtDss4
+Authorization: Braia ewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
 
 ###
 POST http://localhost:3000/restaurant
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMjU5MCwiZXhwIjoxNjcyMjU0MTkwfQ.r90C-ZVDaK_HiNZZNlPTBD9FTcmdZ0Ki3m0lTjtDss4
+Authorization: Braia ewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
 
 {
     "description": "description",
@@ -36,7 +36,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impva
 ###
 POST http://localhost:3000/order
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMTk2NiwiZXhwIjoxNjcyMjUzNTY2fQ.0ws5SScfZEmQvLsqnulgHzja-ZSyIucLstvuh61HSxg
+Authorization: Braia ewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
 
 {
     "restaurantId": "1",
@@ -47,4 +47,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impva
 ###
 GET http://localhost:3000/order/restaurant/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY3MjIzMTk2NiwiZXhwIjoxNjcyMjUzNTY2fQ.0ws5SScfZEmQvLsqnulgHzja-ZSyIucLstvuh61HSxg
+Authorization: Braia ewoJImlkIjogIjEyM2FiYyIsCgkibmFtZSI6ICJub21lIgp9
