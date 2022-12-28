@@ -1,6 +1,6 @@
 import { OrderEntity } from './../../domain/entities/order.entity';
 import { OrderRepository } from 'src/order/domain/repository/order.repository';
-import { CreateOrderUsecaseParams } from './../../domain/usecase/create-order.usecase';
+import { CreateOrderUsecaseParams } from '../../domain/usecase/create-order.usecase';
 import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import { BadRequestException } from '@nestjs/common/exceptions';

@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
 import { SqsModule } from '@ssut/nestjs-sqs';
+import { CreateOrderUsecase } from 'src/order/domain/usecase/create-order.usecase';
+import { OrderModule } from 'src/order/order.module';
 import { aws_environment } from './../../src/enviroment';
 import { MessageHandler } from './messageHandler';
 
 @Module({
     imports: [
+        OrderModule,
         SqsModule.register({
             consumers: [
                 {
@@ -20,8 +23,8 @@ import { MessageHandler } from './messageHandler';
     providers: [
         {
             provide: MessageHandler,
-            useFactory: () => new MessageHandler(),
-            inject: [],
+            useFactory: (usecase: CreateOrderUsecase) => new MessageHandler(usecase),
+            inject: [CreateOrderUsecase],
         },
     ],
 })

@@ -36,7 +36,9 @@ import { GetOrdersByRestaurantUsecase } from './domain/usecase/get-order-by-rest
       },
       inject: [OrderRepositoryImpl]
     },
-
+  ],
+  exports: [
+    CreateOrderUsecase
   ]
 })
 export class OrderModule { }

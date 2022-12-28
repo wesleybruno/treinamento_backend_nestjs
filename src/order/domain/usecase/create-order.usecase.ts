@@ -1,4 +1,4 @@
-import { OrderEntity } from "./../entities/order.entity";
+import { OrderEntity } from "../entities/order.entity";
 import { OrderRepository } from "../repository/order.repository";
 
 export class CreateOrderUsecase {
