@@ -19,12 +19,10 @@ export class CreateOrderUsecase {
 
 export class CreateOrderUsecaseParams {
 
-    id: string;
     restaurantId: string;
     description: string;
 
-    constructor(id: string, restaurantId: string, description: string) {
-        this.id = id;
+    constructor(restaurantId: string, description: string) {
         this.restaurantId = restaurantId;
         this.description = description;
     };

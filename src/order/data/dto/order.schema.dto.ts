@@ -6,18 +6,23 @@ export const OrderSchema = new EntitySchema<OrderEntity>({
     target: OrderEntity,
     columns: {
         id: {
-            type: String,
             primary: true,
-            length: 16,
+            type: "int",
+            generated: "increment",
         },
-        restaurantId: {
+        enternalId: {
             type: String,
-            primary: true,
-            length: 16,
+            length: 64,
         },
         description: {
             type: String,
             length: 255,
         }
+    },
+    relations: {
+        restaurant: {
+            type: "many-to-one",
+            target: "RestaurantEntity",
+        },
     },
 });

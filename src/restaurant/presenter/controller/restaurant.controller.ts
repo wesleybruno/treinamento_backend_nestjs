@@ -20,7 +20,7 @@ export class RestaurantController {
   create(@Body() createRestaurantDto: CreateRestaurantDto) {
 
     return this.createRestaurantUsecase.execute(
-      new CreateRestaurantUsecaseParams(createRestaurantDto.id, createRestaurantDto.description)
+      new CreateRestaurantUsecaseParams(createRestaurantDto.description)
     );
   }
 

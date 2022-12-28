@@ -6,9 +6,13 @@ export const RestaurantSchema = new EntitySchema<RestaurantEntity>({
     target: RestaurantEntity,
     columns: {
         id: {
-            type: String,
             primary: true,
-            length: 16,
+            type: "int",
+            generated: "increment",
+        },
+        enternalId: {
+            type: String,
+            length: 64,
         },
         description: {
             type: String,

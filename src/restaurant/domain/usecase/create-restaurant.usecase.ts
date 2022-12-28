@@ -18,12 +18,10 @@ export class CreateRestaurantUsecase {
 }
 
 export class CreateRestaurantUsecaseParams {
-
-    id: string;
+ 
     description: string;
 
-    constructor(id: string, description: string) {
-        this.id = id;
+    constructor( description: string) {
         this.description = description;
     };
 

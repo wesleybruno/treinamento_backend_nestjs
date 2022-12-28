@@ -23,7 +23,6 @@ export class OrderController {
       throw new NotFoundException();
 
     const params = new CreateOrderUsecaseParams(
-      '1234',
       createOrderDto.restaurantId,
       createOrderDto.description
     );
@@ -32,9 +31,7 @@ export class OrderController {
     if (!resultOrder)
       throw new BadRequestException();
 
-    this.messageProducer.sendMessage({
-      message: 'new_message',
-    });
+    this.messageProducer.sendMessage(resultOrder);
 
     return {
       ...resultOrder

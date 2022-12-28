@@ -14,10 +14,6 @@ export class CreateRestaurantAddressDto {
 
 export class CreateRestaurantDto {
 
-    @IsDefined()
-    @Length(1, 50)
-    id: string
-
     @Length(10, 50)
     description: string
 
